@@ -1,0 +1,54 @@
+[
+  {
+    "event": "catalog_filter_change",
+    "filter_type": "city",
+    "filter_value": "Warszawa",
+    "results_count": 1
+  },
+  {
+    "event": "catalog_filter_change",
+    "filter_type": "gender",
+    "filter_value": "man",
+    "results_count": 0
+  },
+  {
+    "event": "catalog_filter_change",
+    "filter_type": "reset",
+    "filter_value": "all",
+    "results_count": 3
+  },
+  {
+    "event": "catalog_filter_change",
+    "filter_type": "activity",
+    "filter_value": "games",
+    "results_count": 1
+  },
+  {
+    "event": "catalog_filter_change",
+    "filter_type": "activity",
+    "filter_value": "all",
+    "results_count": 3
+  },
+  {
+    "event": "cta_click",
+    "cta_location": "hero_btn"
+  },
+  {
+    "event": "cta_click",
+    "cta_location": "card_select",
+    "profile_id": "kamil"
+  },
+  {
+    "event": "form_start",
+    "form_id": "form_rezerwacja_kompan"
+  },
+  {
+    "event": "lead_success",
+    "form_id": "form_rezerwacja_kompan"
+  },
+  {
+    "event": "cta_click",
+    "cta_location": "card_select",
+    "profile_id": "maja"
+  }
+]

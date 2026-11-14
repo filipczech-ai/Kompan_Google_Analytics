@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kompan — wyjścia bez presji. Poznaj koncepcję koleżeńskich wyjść w Warszawie, Krakowie i Wrocławiu. Wybierz profil i przetestuj formularz demonstracyjny.">
+  <meta name="theme-color" content="#0F766E">
+  <title>Kompan — wyjścia bez presji</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <div class="demo-bar">PROJEKT EDUKACYJNY <span>· Fikcyjne profile. Bez rezerwacji i płatności.</span></div>
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Kompan — strona główna"><span class="brand-mark" aria-hidden="true">k.</span><span>kompan<span class="brand-caption">Wyjścia bez presji</span></span></a>
+      <nav aria-label="Nawigacja główna"><a href="#oferta">Katalog towarzyszy</a><a href="#zasady">Bezpieczeństwo i zasady</a><a href="#jak-to-dziala">Jak to działa</a></nav>
+      <a class="button button-outline nav-cta" id="cta-nav" data-cta-location="nav_btn" href="#rezerwacja"><span class="desktop-label">Zarezerwuj wyjście</span><span class="mobile-label">Wybierz osobę</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="sec_hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-top"><span class="eyebrow"><span class="status-dot"></span> DOBRY PLAN ZACZYNA SIĘ OD TOWARZYSTWA</span><span class="cities">Warszawa / Kraków / Wrocław</span></div>
+        <div class="hero-layout">
+          <div class="hero-copy"><h1 id="hero-title">Masz plany na wyjście,<br>ale <span>nie masz z kim pójść?</span></h1><p>Wynajmij towarzysza lub towarzyszkę na godziny <strong>(60–100 zł/h)</strong>. Wybierz osobę, która podziela Twoje zainteresowania. Wyłącznie koleżeńsko, bez randkowej presji.</p><div class="hero-notes"><span>↗ Twoje miasto, Twoje plany</span><span>◷ Spotkania od 2 godzin</span></div></div>
+          <div class="hero-aside" aria-label="Pomysły na wspólne wyjście"><span class="aside-label">CO ROBIMY W WEEKEND?</span><div class="activity-note"><span aria-hidden="true">☕</span> Kawa i długa rozmowa <span aria-hidden="true">↗</span></div><div class="activity-note"><span aria-hidden="true">▤</span> Film, a potem dyskusja <span aria-hidden="true">↗</span></div><div class="activity-note"><span aria-hidden="true">♧</span> Spacer bez pośpiechu <span aria-hidden="true">↗</span></div><p>Dobry czas. Po prostu razem.</p></div>
+        </div>
+        <div class="filter-bar" role="group" aria-label="Filtry katalogu">
+          <div class="filter-field"><label for="filter-city">Miasto</label><select id="filter-city"><option value="all">Wszystkie miasta</option><option>Warszawa</option><option>Kraków</option><option>Wrocław</option></select></div>
+          <div class="filter-field"><label for="filter-gender">Płeć towarzysza</label><select id="filter-gender"><option value="all">Dowolna</option><option value="woman">Kobieta</option><option value="man">Mężczyzna</option></select></div>
+          <div class="filter-field"><label for="filter-activity">Aktywność</label><select id="filter-activity"><option value="all">Wszystkie aktywności</option><option value="culture">Kino i kultura</option><option value="food">Restauracja i kawa</option><option value="games">Planszówki i gry</option><option value="sport">Sport i spacer</option><option value="event">Osoba towarzysząca</option></select></div>
+          <a class="button" id="cta-hero" data-cta-location="hero_btn" href="#oferta">Przeglądaj profile<br>w swoim mieście <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="catalog section" id="oferta" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">01 / ZNAJDŹ SWOJE TOWARZYSTWO</span><h2 id="catalog-title">Na tych samych falach.</h2><p>Wybierz osobę, z którą chcesz spędzić czas — po swojemu.</p></div><span id="results-count" class="count" role="status" aria-live="polite"></span></div>
+        <p class="demo-caption">Przykładowe profile i ceny ilustrują koncepcję usługi. Zdjęcia są poglądowe; przedstawione osoby nie oferują tu usług.</p>
+        <div class="profile-grid" id="profiles"></div>
+        <div id="empty-state" class="empty-state" hidden><h3>Jeszcze nie mamy takiego połączenia.</h3><p>Zmień miasto lub aktywność, aby zobaczyć przykładowe profile.</p><button class="button button-outline" id="reset-filters" type="button">Wyczyść filtry</button></div>
+        <button id="show-more" class="button button-outline show-more" type="button" hidden>Pokaż więcej profili</button>
+        <div class="catalog-bottom"><span>Twój wybór. Wspólna aktywność. Jasne zasady.</span><a href="#zasady">Poznaj założenia bezpieczeństwa <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+    <section class="section safety" id="zasady" aria-labelledby="safety-title"><div class="container">
+      <span class="eyebrow">02 / KOMFORT ZACZYNA SIĘ OD ZASAD</span><h2 id="safety-title">Jasne zasady od pierwszej minuty.<br><span>Zero niezręczności.</span></h2><p class="section-intro">Tak projektujemy Kompana. Poniższe zasady opisują planowaną usługę, nie działającą platformę.</p>
+      <div class="safety-grid">
+        <article><span class="line-icon" aria-hidden="true">✓</span><h3>3-etapowa weryfikacja</h3><p>W koncepcji usługi każdy profil przechodzi kontrolę tożsamości, wideorozmowę z zespołem i akceptację kodeksu etycznego. Profile w tej demonstracji są fikcyjne.</p><span class="card-footnote">Tożsamość · rozmowa · zasady</span></article>
+        <article><span class="line-icon" aria-hidden="true">♧</span><h3>Wyłącznie koleżeńsko</h3><p>Kino, kawiarnia, park czy wydarzenie — spotkania tylko w miejscach publicznych. Bez podtekstów randkowych i intymnych, z poszanowaniem granic obu osób.</p><span class="card-footnote">Wspólne wyjście, bez presji</span></article>
+        <article><span class="line-icon" aria-hidden="true">▱</span><h3>Przejrzyste koszty</h3><p>60–100 zł za godzinę towarzystwa, minimum 2 godziny. W docelowej usłudze płatność następowałaby po akceptacji terminu. Bilety, jedzenie i napoje każdy opłaca sam.</p><span class="card-footnote">W demonstracji nic nie płacisz</span></article>
+      </div>
+      <div class="steps" id="jak-to-dziala"><h3>Od planu do wspólnego wyjścia</h3><ol><li><span>1</span>Wybierz osobę</li><li><span>2</span>Zaplanuj aktywność i termin</li><li><span>3</span>Sprawdź demonstrację zgłoszenia</li></ol></div>
+    </div></section>
+    <section class="section booking" id="rezerwacja" aria-labelledby="booking-title"><div class="container booking-layout">
+      <div class="booking-intro"><span class="eyebrow">03 / ZRÓB MIEJSCE NA DOBRY CZAS</span><h2 id="booking-title">Zarezerwuj<br>wspólne wyjście.</h2><p>Wybierz aktywność i termin z co najmniej 24-godzinnym wyprzedzeniem. Reszta zaczyna się od jednej rozmowy.</p><div class="demo-note"><strong>Przetestuj pomysł, bez zobowiązań.</strong><p>To formularz demonstracyjny. Użyj fikcyjnych danych, np. test@example.com i 123456789. Nie wysyłamy e-maili ani SMS-ów, nie pobieramy opłat i nie zapisujemy zgłoszeń.</p></div><a class="text-link" href="#oferta">← Wróć do profili</a></div>
+      <div class="form-card">
+        <form id="form_rezerwacja_kompan" novalidate data-clarity-mask="true">
+          <div class="form-header"><h3>Twój plan na wyjście</h3><span>DEMO</span></div><p class="form-help">Pola oznaczone * są wymagane.</p>
+          <div class="form-fields">
+            <div class="field full"><label for="companion">Wybrany towarzysz *</label><select id="companion" required aria-describedby="companion-error"><option value="">Wybierz osobę z katalogu</option></select><span class="error" id="companion-error"></span></div>
+            <div class="field full"><label for="activity">Rodzaj aktywności *</label><select id="activity" required aria-describedby="activity-error"><option value="">Co chcesz robić?</option><option>Kino / Teatr / Wystawa</option><option>Restauracja / Kawa / Ramen</option><option>Koncert / Wydarzenie</option><option>Planszówki</option><option>Sport / Spacer</option><option>Osoba towarzysząca</option></select><span class="error" id="activity-error"></span></div>
+            <div class="field"><label for="date">Data i godzina *</label><input id="date" type="datetime-local" required aria-describedby="date-hint date-error"><small id="date-hint">Minimum 24 godziny od teraz.</small><span class="error" id="date-error"></span></div>
+            <div class="field"><label for="hours">Czas trwania (godziny) *</label><input id="hours" type="number" min="2" step="1" value="2" required aria-describedby="hours-error"><span class="error" id="hours-error"></span></div>
+            <div class="cost full" role="status" aria-live="polite"><span>Szacowany koszt towarzystwa</span><strong id="cost-total">Wybierz osobę</strong><small id="cost-detail">Bez opłat w demonstracji. Bilety i jedzenie osobno.</small></div>
+            <div class="field"><label for="name">Twoje imię (fikcyjne) *</label><input id="name" autocomplete="off" minlength="2" maxlength="60" required placeholder="np. Aleks" aria-describedby="name-error"><span class="error" id="name-error"></span></div>
+            <div class="field"><label for="phone">Telefon (fikcyjny) *</label><div class="phone-input"><span>+48</span><input id="phone" type="tel" inputmode="numeric" autocomplete="off" required pattern="[0-9]{9}" maxlength="9" placeholder="123456789" aria-describedby="phone-error"></div><span class="error" id="phone-error"></span></div>
+            <div class="field full"><label for="email">Adres e-mail (fikcyjny) *</label><input id="email" type="email" autocomplete="off" required maxlength="254" placeholder="test@example.com" aria-describedby="email-error"><span class="error" id="email-error"></span></div>
+            <div class="field full"><label class="checkbox-label" for="terms"><input id="terms" type="checkbox" required aria-describedby="terms-error"><span>Akceptuję <button class="inline-button" id="open-rules" type="button">zasady demonstracji</button> i potwierdzam, że spotkanie ma charakter wyłącznie koleżeński w miejscu publicznym. *</span></label><span class="error" id="terms-error"></span></div>
+          </div>
+          <p id="form-error" class="error" role="alert"></p>
+          <button class="button submit" type="submit" id="submit-booking">Wyślij prośbę o rezerwację <span aria-hidden="true">↗</span></button>
+          <p class="submit-note">Symulacja — bez wysyłki i bez opłaty. W planowanej usłudze potwierdzenie terminu następowałoby w ciągu 2 godzin.</p>
+        </form>
+        <div id="success" class="success" hidden tabindex="-1" role="status"><span class="success-icon" aria-hidden="true">✓</span><span class="eyebrow">GOTOWE — TO TYLKO DEMONSTRACJA</span><h3>Dobry plan<br>jest już gotowy.</h3><p><strong>Demonstracja zakończona — dane nie zostały wysłane.</strong></p><p>Nie wysłaliśmy SMS-a ani e-maila. To podsumowanie nie jest rezerwacją.</p><dl id="success-summary"></dl><a href="#oferta" class="button button-outline">Wróć do katalogu ↑</a><p class="submit-note">Jedna demonstracja na wyświetlenie strony. Ponowienie testu wymaga odświeżenia.</p></div>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">k.</span><span>kompan<span class="brand-caption">Wyjścia bez presji</span></span></a><p>Projekt edukacyjny · Fikcyjna oferta dla osób dorosłych.<br>© 2026 Kompan — demonstracja landing page.</p><button class="inline-button" id="open-consent" type="button">Ustawienia prywatności</button></div></footer>
+  <dialog id="consent-dialog" aria-labelledby="consent-title"><div class="dialog-top"><span class="eyebrow">TWÓJ WYBÓR</span><button type="button" class="close-dialog" aria-label="Zamknij ustawienia prywatności">×</button></div><h2 id="consent-title">Ustawienia prywatności</h2><p>Na tym etapie nie zainstalowano GA4, Meta Pixel ani Clarity. Sygnały interakcji pozostają lokalnie w przeglądarce, bez treści formularza.</p><p>Ten panel zapisuje wyłącznie wybór zgód. Integrację z CMP i narzędziami pomiarowymi przygotujemy na kolejnym etapie.</p><label class="consent-option"><span><strong>Analityka</strong><small>Planowane Google Analytics 4 i Microsoft Clarity.</small></span><input id="consent-analytics" type="checkbox"></label><label class="consent-option"><span><strong>Marketing</strong><small>Planowany Meta Pixel.</small></span><input id="consent-marketing" type="checkbox"></label><div class="consent-actions"><button class="button button-outline" id="consent-reject" type="button">Odrzuć opcjonalne</button><button class="button" id="consent-save" type="button">Zapisz wybór</button><button class="inline-button" id="consent-all" type="button">Zaakceptuj wszystkie</button></div></dialog>
+  <dialog id="rules-dialog" aria-labelledby="rules-title"><div class="dialog-top"><span class="eyebrow">PROJEKT EDUKACYJNY</span><button type="button" class="close-dialog" aria-label="Zamknij zasady">×</button></div><h2 id="rules-title">Zasady demonstracji</h2><p>Kompan jest prototypem dla osób dorosłych. Profile, opisy i stawki są fikcyjne. Nie można tutaj zawrzeć umowy, umówić spotkania ani zapłacić.</p><p>Używaj wyłącznie fikcyjnych danych. Formularz sprawdza ich format lokalnie; nie przekazuje ich do serwera ani do analityki.</p><p>Koncepcja zakłada wyłącznie koleżeńskie spotkania w miejscach publicznych, poszanowanie granic oraz osobne opłacanie własnych biletów i jedzenia.</p></dialog>
+  <noscript><div class="noscript">Włącz JavaScript, aby korzystać z katalogu i demonstracji formularza. Formularz bez JavaScript nie jest dostępny.</div></noscript>
+</body>
+</html>

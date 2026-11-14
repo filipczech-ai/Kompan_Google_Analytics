@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-14T15:35:46.461Z",
+  "browser": "Chromium",
+  "checks": [
+    "Katalog ma 3 profile; obrazy załadowane.",
+    "Łączone filtry, pusty wynik i reset działają.",
+    "CTA hero i karta: jedno zdarzenie na klik, wybór osoby i koszt 2 × 70 = 140 zł.",
+    "Pusty formularz: błędy, brak sukcesu.",
+    "Odrzucono termin +23h, 1h, 2.5h oraz błędny telefon/e-mail. Koszt 3 × 70 = 210 zł.",
+    "Pełna walidacja: jeden sukces również po dwóch submitach i powrocie do katalogu.",
+    "Brak kontaktu w dataLayer/URL, brak wysyłki formularza i zewnętrznych żądań.",
+    "Preferencje: odmowa, częściowa, pełna i zmiana — zapis dwóch flag. Nie jest to test wdrożenia CMP.",
+    "Odświeżenie resetuje demonstrację; wybór zgód trwały; Escape zamyka dialog; Tab przechodzi do pola aktywności.",
+    "Brak poziomego przewijania przy 320, 390, 768 i 1366 px.",
+    "Brak błędów JavaScript i żądań do zewnętrznych usług."
+  ],
+  "limitations": [
+    "Nie zastępuje testu z drugą parą.",
+    "Brak wdrożenia GTM/GA4/Meta/Clarity/CMP — sygnały są lokalne.",
+    "Brak publikacji HTTPS."
+  ]
+}
