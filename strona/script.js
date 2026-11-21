@@ -142,7 +142,41 @@
     signal('consent_update',{analytics_storage:analytics?'granted':'denied',ad_storage:marketing?'granted':'denied'});
     $('consent-dialog').close();
   }
-  $('open-consent').addEventListener('click',openConsent);
+  // Cookiebot CMP integration: renew button & category revocation reload
+  $('open-consent').addEventListener('click', () => {
+    if (window.Cookiebot && typeof window.Cookiebot.renew === 'function') {
+      window.Cookiebot.renew();
+    } else {
+      openConsent();
+    }
+  });
+
+  window.addEventListener('CookiebotOnConsentReady', () => {
+    if (!window.Cookiebot || !window.Cookiebot.consent) return;
+    const current = {
+      analytics: Boolean(window.Cookiebot.consent.statistics),
+      marketing: Boolean(window.Cookiebot.consent.marketing)
+    };
+    const storageKey = 'kompan_cookiebot_consent_state';
+    let previous = null;
+    try {
+      const stored = sessionStorage.getItem(storageKey);
+      if (stored) previous = JSON.parse(stored);
+    } catch (e) {}
+
+    const revoked = previous && (
+      (previous.analytics && !current.analytics) ||
+      (previous.marketing && !current.marketing)
+    );
+
+    try {
+      sessionStorage.setItem(storageKey, JSON.stringify(current));
+    } catch (e) {}
+
+    if (revoked) {
+      window.location.reload();
+    }
+  });
   $('consent-reject').addEventListener('click',()=>saveConsent(false,false));
   $('consent-all').addEventListener('click',()=>saveConsent(true,true));
   $('consent-save').addEventListener('click',()=>saveConsent($('consent-analytics').checked,$('consent-marketing').checked));
