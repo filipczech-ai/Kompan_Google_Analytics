@@ -1,6 +1,6 @@
 # Kompan — dokumentacja budowy, spotkanie 2
 
-Data prac: 14.11.2026. Zespół: do uzupełnienia przez autorów. Publiczny URL: jeszcze nie opublikowano. Lokalny podgląd: http://127.0.0.1:8000.
+Data prac: 21.11.2026. Zespół: Filip Czech, Mateusz Nowak. Publiczny URL: https://filipczech-ai.github.io/Kompan_Google_Analytics/strona/ (oraz przekierowanie: https://filipczech-ai.github.io/Kompan_Google_Analytics/). Lokalny podgląd: http://127.0.0.1:8000.
 
 ## Rezultat
 
@@ -28,6 +28,15 @@ Polecenie użytkownika: „przeanalizuj je i napisz kod (jest przygotowane repo 
 - `dowody/dataLayer.json`: lokalne sygnały CTA, filtrów, rozpoczęcia i sukcesu. Nie dowodzi odbioru w GA4 ani Meta.
 - `dowody/test-results.json`: faktyczny wynik uruchomienia automatycznych testów Chromium. Test preferencji dotyczy tylko lokalnego panelu; prawdziwe blokowanie narzędzi przez CMP wymaga dalszego wdrożenia.
 - `dowody/baseline-przed-korekta.zip`: kopia strony przed korektą zdjęcia, do porównania zmian.
+
+### Przykład poprawnego sygnału lead_success z dataLayer
+Zgodnie z wymogami projektu obiekt przekazywany do kolejki `window.dataLayer` po pełnej i poprawnej walidacji zawiera wyłącznie stały identyfikator formularza, bez jakichkolwiek danych osobowych wpisanych przez użytkownika:
+```json
+{
+  "event": "lead_success",
+  "form_id": "form_rezerwacja_kompan"
+}
+```
 
 Automatyzacja testów: `tests/browser.cjs` (Node + Playwright; serwer lokalny musi działać). Opcjonalne `PLAYWRIGHT_EXECUTABLE_PATH` wskazuje zainstalowaną przeglądarkę; `NODE_PATH` można ustawić na lokalny katalog bibliotek. Te zależności służą wyłącznie testom — strona ich nie potrzebuje.
 
