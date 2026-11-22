@@ -175,7 +175,15 @@
 
     if (revoked) {
       window.location.reload();
+      return;
     }
+    // Ensure cookie_consent_update is always present in dataLayer on load
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'cookie_consent_update',
+      consent_statistics: current.analytics,
+      consent_marketing: current.marketing
+    });
   });
   $('consent-reject').addEventListener('click',()=>saveConsent(false,false));
   $('consent-all').addEventListener('click',()=>saveConsent(true,true));
